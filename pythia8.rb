@@ -10,7 +10,7 @@ class Pythia8 < Formula
 
   depends_on 'lhapdf'
 
-  depends on 'boost'
+  depends_on 'boost'
   
   option 'with-vincia', 'Enable VINCIA plugin (http://vincia.hepforge.org)'
   if build.with? 'vincia'
