@@ -12,6 +12,8 @@ class Pythia8 < Formula
 
   depends_on 'boost'
   
+  depends_on 'root6'
+  
   option 'with-vincia', 'Enable VINCIA plugin (http://vincia.hepforge.org)'
   if build.with? 'vincia'
 
@@ -34,6 +36,7 @@ class Pythia8 < Formula
       --with-hepmc=#{Formula['hepmc'].opt_prefix}
       --with-lhapdf6=#{Formula['lhapdf'].opt_prefix}
       --with-boost=#{Formula['boost'].opt_prefix}
+      --with-root=#{Formula['root6'].opt_prefix}
     ]
 
     system "./configure", *args

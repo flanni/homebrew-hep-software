@@ -1,5 +1,5 @@
-# homebrew-hep
-Few modified formulas for HEP packages for Mac.
+# homebrew-hep-software
+Few modified formulas for HEP packages on Mac.
 
 There are excellent homebrew formulas developed by D. Hall (http://davidchall.github.io/homebrew-hep/).
 
