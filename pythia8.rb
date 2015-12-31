@@ -36,7 +36,7 @@ class Pythia8 < Formula
       --disable-dependency-tracking
       --prefix=#{prefix}
       --enable-shared
-      --with-hepmc=#{Formula['hepmc'].opt_prefix}
+      --with-hepmc2=#{Formula['hepmc'].opt_prefix}
       --with-lhapdf6=#{Formula['lhapdf'].opt_prefix}
       --with-boost=#{Formula['boost'].opt_prefix}
       --with-root=#{Formula['root6'].opt_prefix}
