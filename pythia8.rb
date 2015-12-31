@@ -1,10 +1,13 @@
 require 'formula'
 
 class Pythia8 < Formula
-  homepage 'http://pythia8.hepforge.org'
-  url 'http://home.thep.lu.se/~torbjorn/pythia8/pythia8212.tgz'
-  sha256 'f8fb4341c7e8a8be3347eb26b00329a388ccf925313cfbdba655a08d7fd5a70e'
-  version '8.212'
+  
+  desc "Pythia 8.212"
+  homepage "http://pythia8.hepforge.org"
+  url "http://home.thep.lu.se/~torbjorn/pythia8/pythia8212.tgz"
+  version "8.212"
+  sha256 "f8fb4341c7e8a8be3347eb26b00329a388ccf925313cfbdba655a08d7fd5a70e"
+
 
   depends_on 'hepmc'
 
@@ -79,3 +82,5 @@ class Pythia8 < Formula
     EOS
   end
 end
+
+  
