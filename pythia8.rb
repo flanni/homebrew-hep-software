@@ -82,8 +82,3 @@ class Pythia8 < Formula
     EOS
   end
 end
-<<<<<<< HEAD
-
-  
-=======
->>>>>>> b1df1542bb942e295a315b1d205ad4ba894f35b7
