@@ -38,7 +38,11 @@ class Pythia8 < Formula
       --enable-shared
       --with-hepmc=#{Formula['hepmc'].opt_prefix}
       --with-lhapdf6=#{Formula['lhapdf'].opt_prefix}
+<<<<<<< HEAD
       --with-boost=#{Formula['boost'].opt_prefix}
+=======
+    --with-boost=#{Formula['boost'].opt_prefix}
+>>>>>>> b1df1542bb942e295a315b1d205ad4ba894f35b7
       --with-root=#{Formula['root6'].opt_prefix}
     ]
 
@@ -82,5 +86,8 @@ class Pythia8 < Formula
     EOS
   end
 end
+<<<<<<< HEAD
 
   
+=======
+>>>>>>> b1df1542bb942e295a315b1d205ad4ba894f35b7
