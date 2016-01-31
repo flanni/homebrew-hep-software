@@ -14,10 +14,12 @@ class Geant4 < Formula
   depends_on "clhep"
   depends_on "qt" => :optional
   depends_on "xerces-c" if build.with? "gdml"
+  
   patch :p0 do
     url "https://github.com/flanni/homebrew-hep-software/geant4_cmake_modules_findclhep.diff"
     sha256 "333e842d040ed25d209feb76e03ff60ec90ed4760f7636d3133c4d5a911efd61" 
   end
+  
   def install
     mkdir "geant-build" do
       args = %W[
