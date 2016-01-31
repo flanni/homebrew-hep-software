@@ -20,7 +20,7 @@
     system "export GEANT4_INSTALL=/usr/local/Cellar/geant4/4.10.02/"
     mkdir "g4py-build" do 
      system "pwd"
-     system "cmake", "-DGEANT4_INSTALL=/usr/local/Cellar/geant4/4.10.02/ ../environments/g4py" 
+     system "cmake", "../environments/g4py -DGEANT4_INSTALL=/usr/local/Cellar/geant4/4.10.02/ " 
      system "make", "install GEANT4_INSTALL=/usr/local/Cellar/geant4/4.10.02/"
     end 
   end 
