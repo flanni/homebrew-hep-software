@@ -15,9 +15,13 @@ class Geant4 < Formula
   depends_on "qt" => :optional
   depends_on "xerces-c" 
   
-  patch :p0 do
-    url "https://github.com/flanni/homebrew-hep-software/geant4_cmake_modules_findclhep.diff"
-    sha256 "333e842d040ed25d209feb76e03ff60ec90ed4760f7636d3133c4d5a911efd61" 
+  # patch :p0 do
+  #   url "https://github.com/flanni/homebrew-hep-software/geant4_cmake_modules_findclhep.diff"
+  #   sha256 "333e842d040ed25d209feb76e03ff60ec90ed4760f7636d3133c4d5a911efd61" 
+  # end
+  
+  def patches
+    DATA
   end
   
   def install
@@ -44,3 +48,17 @@ class Geant4 < Formula
     end
   end
 end
+
+__END__
+--- geant4.10.02/cmake/Modules/FindCLHEP.cmake.orig     2016-01-31 10:12:58.000000000 +0100
++++ geant4.10.02/cmake/Modules/FindCLHEP.cmake  2016-01-31 10:14:15.000000000 +0100
+@@ -205,7 +205,7 @@
+ if(CLHEP_INCLUDE_DIR)
+     set(CLHEP_VERSION 0)
+     file(READ "${CLHEP_INCLUDE_DIR}/CLHEP/Units/defs.h" _CLHEP_DEFS_CONTENTS)
+-    string(REGEX REPLACE ".*#define PACKAGE_VERSION \"([0-9.]+).*" "\\1"
++    string(REGEX REPLACE ".*#define CLHEP_UNITS_VERSION \"([0-9.]+).*" "\\1"
+         CLHEP_VERSION "${_CLHEP_DEFS_CONTENTS}")
+ 
+     if(NOT CLHEP_FIND_QUIETLY)
+
