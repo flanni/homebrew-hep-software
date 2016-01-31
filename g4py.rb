@@ -21,7 +21,7 @@
     mkdir "g4py-build" do 
      system "pwd"
      args = %W[
-        ../
+        ../environments/g4py
         -DGEANT4_INSTALL=/usr/local/Cellar/geant4/4.10.02/ 
      ]
      system "cmake", *args
