@@ -43,8 +43,6 @@ class Geant4 < Formula
       args.concat(std_cmake_args)
       system "cmake", *args
       system "make", "install"
-      system "export G4INSTALL=/usr/local/Cellar/geant4/4.10.02/"
-      system "cd ../environments/g4py; mkdir build; cd build; cmake ../; make install"
     end
   end
 end
