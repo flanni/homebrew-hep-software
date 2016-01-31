@@ -7,7 +7,6 @@ class Geant4 < Formula
   sha256 "633ca2df88b03ba818c7eb09ba21d0667a94e342f7d6d6ff3c695d83583b8aa3"
   
   option "with-g3tog4", "Use G3toG4 Library"
-  option "with-gdml", "Use GDML"
   option "with-notimeout", "Set notimeout in installing data"
 
   depends_on "cmake" => :build
@@ -26,6 +25,7 @@ class Geant4 < Formula
         -DGEANT4_BUILD_EXAMPLE=ON
         -DGEANT4_USE_SYSTEM_CLHEP=ON
         -DGEANT4_BUILD_STORE_TRAJECTORY=ON
+        -DGEANT4_USE_GDML=ON
       ]
 
       args << "-DGEANT4_INSTALL_DATA_TIMEOUT=86400" if build.with? "notimeout"
@@ -35,6 +35,8 @@ class Geant4 < Formula
       args.concat(std_cmake_args)
       system "cmake", *args
       system "make", "install"
+      system "export G4INSTALL=/usr/local/Cellar/geant4/4.10.02/"
+      system "cd ../environments/g4py; mkdir build; cd build; cmake ../; make install"
     end
   end
 end
