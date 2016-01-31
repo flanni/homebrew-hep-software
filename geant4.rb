@@ -13,7 +13,7 @@ class Geant4 < Formula
   depends_on :x11
   depends_on "clhep"
   depends_on "qt" => :optional
-  depends_on "xerces-c" if build.with? "gdml"
+  depends_on "xerces-c" 
   
   patch :p0 do
     url "https://github.com/flanni/homebrew-hep-software/geant4_cmake_modules_findclhep.diff"
