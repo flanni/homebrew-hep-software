@@ -18,12 +18,11 @@
   
   def install
     system "export GEANT4_INSTALL=/usr/local/Cellar/geant4/4.10.02/"
-    system "cd", "environments/g4py"
     system "mkdir", "g4py-build" 
-    system "ls"
+    system "pwd"
     system "cd", "g4py-build"
-    system "cmake", "../" 
-    system "cd", "g4py-build"
+    system "pwd"
+    system "cmake", "../environments/g4py" 
     system "make", "install"
   end 
 end
