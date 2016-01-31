@@ -510,6 +510,18 @@ __END__
  
  # install
  install(TARGETS ${_TARGET} LIBRARY DESTINATION ${G4SITEMODULES_INSTALL_DIR})
+--- geant4.10.02/environments/g4py/site-modules/primaries/ParticleGun/CMakeLists.txt.orig	2016-01-31 18:48:55.000000000 +0100
++++ geant4.10.02/environments/g4py/site-modules/primaries/ParticleGun/CMakeLists.txt	2016-01-31 18:49:06.000000000 +0100
+@@ -17,7 +17,7 @@
+ 
+ target_link_libraries (${_TARGET}
+                       ${GEANT4_LIBRARIES_WITH_VIS} boost_python
+-                      ${PYTHON_LIBRARIES})
++                      ${PYTHON_LIBRARIES} ${CLHEP_LIBRARIES})
+ 
+ # install
+ install(TARGETS ${_TARGET} LIBRARY DESTINATION ${G4SITEMODULES_INSTALL_DIR})
+
 --- geant4.10.02/environments/g4py/source/CMakeLists.txt.orig	2016-01-31 17:20:58.000000000 +0100
 +++ geant4.10.02/environments/g4py/source/CMakeLists.txt	2016-01-31 17:21:13.000000000 +0100
 @@ -9,7 +9,7 @@
