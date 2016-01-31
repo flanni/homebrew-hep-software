@@ -20,6 +20,7 @@
     system "export GEANT4_INSTALL=/usr/local/Cellar/geant4/4.10.02/"
     system "cd", "environments/g4py"
     system "mkdir", "g4py-build" 
+    system "cd", "g4py-build"
     system "cmake", "../" 
     system "cd", "g4py-build"
     system "make", "install"
