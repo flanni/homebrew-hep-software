@@ -31,7 +31,6 @@ class Geant4 < Formula
       args << "-DGEANT4_INSTALL_DATA_TIMEOUT=86400" if build.with? "notimeout"
       args << "-DGEANT4_USE_QT=ON" if build.with? "qt"
       args << "-DGEANT4_USE_G3TOG4=ON" if build.with? "g3tog4"
-      args << "-DGEANT4_USE_GDML=ON" if build.with? "gdml"
       args.concat(std_cmake_args)
       system "cmake", *args
       system "make", "install"
