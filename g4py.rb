@@ -1,6 +1,6 @@
  require 'formula'
  
- class g4py < Formula
+ class G4py < Formula
   homepage "http://geant4.cern.ch"
   url "http://geant4.cern.ch/support/source/geant4.10.02.tar.gz"
   version "4.10.02"
