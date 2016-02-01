@@ -17,11 +17,11 @@
   end
   
   def install
-    system "export GEANT4_INSTALL=/usr/local/Cellar/geant4/4.10.02/"
-    mkdir "g4py-build" do 
+    mkdir "build" do 
      system "pwd"
      args = %W[
         ../environments/g4py
+        -DCMAKE_INSTALL_PREFIX=/usr/local/Cellar/g4py/4.10.02
         -DGEANT4_INSTALL=/usr/local/Cellar/geant4/4.10.02/ 
      ]
      system "cmake", *args
@@ -380,13 +380,27 @@ __END__
 +foreach(__clhep_comp ${CLHEP_COMPONENTS})
 +  mark_as_advanced(CLHEP_${__clhep_comp}_LIBRARY)
 +endforeach()
---- geant4.10.02/environments/g4py/CMakeLists.txt.orig	2016-01-31 16:07:34.000000000 +0100
-+++ geant4.10.02/environments/g4py/CMakeLists.txt	2016-01-31 16:07:50.000000000 +0100
-@@ -27,6 +27,7 @@
+--- geant4.10.02/environments/g4py/CMakeLists.txt.orig	2016-02-01 10:47:32.000000000 +0100
++++ geant4.10.02/environments/g4py/CMakeLists.txt	2016-02-01 11:00:52.000000000 +0100
+@@ -6,7 +6,12 @@
+ project(Geant4Py)
+ #------------------------------------------------------------------------------
+ # installation prefixes for libraries
+-set(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR})
++if(NOT CMAKE_INSTALL_PREFIX)
++   message(STATUS  "CMAKE_INSTALL_PREFIX not define. Set it to: ${PROJECT_SOURCE_DIR}")
++   set(CMAKE_INSTALL_PREFIX ${PROJECT_SOURCE_DIR})
++else()
++   message(STATUS "CMAKE_INSTALL_PREFIX defined as: ${CMAKE_INSTALL_PREFIX}")
++endif()
+ 
+ # debug mode
+ set(DEBUG FALSE CACHE BOOL "Debug Mode (Debug On)")
+@@ -27,6 +32,7 @@
  find_package(Geant4 REQUIRED)
  find_package(PythonInterp REQUIRED)
  find_package(PythonLibs REQUIRED)
-+find_package(CLHEP)
++find_package(CLHEP REQUIRED)
  find_package(Boost)
  find_package(XercesC)
  find_package(ROOT)
