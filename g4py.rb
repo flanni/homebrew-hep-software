@@ -21,10 +21,10 @@
      system "pwd"
      args = %W[
         ../environments/g4py
-        -DCMAKE_INSTALL_PREFIX=/usr/local/Cellar/g4py/4.10.02
-        -DGEANT4_INSTALL=/usr/local/Cellar/geant4/4.10.02/
-        -DPYTHON_LIBRARY=`python-config --prefix`/lib/python2.7/config/libpython2.7.dylib 
-        -DPYTHON_INCLUDE_DIR=`python-config --prefix`/include/python2.7
+        -DCMAKE_INSTALL_PREFIX="/usr/local/Cellar/g4py/4.10.02"
+        -DGEANT4_INSTALL="/usr/local/Cellar/geant4/4.10.02"
+        -DPYTHON_LIBRARY="`python-config --prefix`/lib/python2.7/config/libpython2.7.dylib" 
+        -DPYTHON_INCLUDE_DIR="`python-config --prefix`/include/python2.7"
      ]
      system "cmake", *args
      margs = %W[
