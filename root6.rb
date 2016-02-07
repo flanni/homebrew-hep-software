@@ -6,15 +6,9 @@ class Root6 < Formula
   desc "Object oriented framework for large scale data analysis"
   homepage "http://root.cern.ch"
   url "https://root.cern.ch/download/root_v#{version_number}.source.tar.gz"
-  mirror "https://fossies.org/linux/misc/root_v#{version_number}.source.tar.gz"
   version version_number
   sha256 "96e460883a3a0f350beda732364b8091b2bd98e1e953e0d86a51eeba19a0edcb"
   head "http://root.cern.ch/git/root.git"
-  bottle do
-    sha256 "99bd90944a2e8a9f058bf8abf04adc420c27cbac151d62091685ba927702c74f" => :el_capitan
-    sha256 "b6ea9756b192d8ac8145a06e8384329cdb62c6e6513661bc666ba57e074b87f8" => :yosemite
-    sha256 "ba852841770718811dbe84305975105338cce4c8d68d860cecaa5ef64dfac92b" => :mavericks
-  end
 
   depends_on "xrootd" => :optional
   depends_on "openssl" => :recommended # use homebrew's openssl
