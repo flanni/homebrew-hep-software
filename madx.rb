@@ -14,16 +14,15 @@ class MadX < Formula
   depends_on "python" => :build
  
   def install
-   mkdir "build" do 
-   system "pwd"
-   system "cmake", ".."
-   system "make", "install"
-   prefix.install "doc"
-
+    mkdir "build" do 
+      system "pwd"
+      system "cmake", ".."
+      system "make", "install"
+      prefix.install "doc"
+    end 
   end 
- end 
 end
 
 def caveats
- "Mad-x is the forefront of computational physics in the field of particle accelerator design and simulation"
+  "Mad-x is the forefront of computational physics in the field of particle accelerator design and simulation"
 end
