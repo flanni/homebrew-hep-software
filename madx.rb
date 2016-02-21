@@ -17,8 +17,6 @@ class Madx < Formula
     mkdir "build" do 
       system "pwd"
       system "cmake", ".."
-      system "echo", "$SHELL"
-      system "export", "PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin"
       system "make", "install"
       prefix.install "doc"
     end 
