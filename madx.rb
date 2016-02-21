@@ -1,6 +1,6 @@
 require 'formula'
  
-class MadX < Formula
+class Madx < Formula
 
   desc "Mad-X"
   homepage "http://madx.web.cern.ch/madx/"
