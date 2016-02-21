@@ -1,6 +1,6 @@
  require 'formula'
  
- class madx < Formula
+ class MadX < Formula
   homepage "http://madx.web.cern.ch/madx/"
   head "http://svn.cern.ch/guest/madx/trunk/madX", :using => :svn
   
