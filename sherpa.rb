@@ -6,7 +6,7 @@ class Sherpa < Formula
   homepage "https://sherpa.hepforge.org/trac/wiki"
   url "http://www.hepforge.org/archive/sherpa/SHERPA-MC-2.2.0.tar.gz"
   version "2.2.0"
-  sha256 "13e76bb8ea00a5abe80d8145bb330c0c1107e020772749b3e20aaa4a2a03ac3d"
+  sha256 "eb5dfde38f4f7a166f313d3c24d1af22c99f9934b7c50c981ff3f5aec9c467d7"
 
 
   depends_on 'hepmc'
