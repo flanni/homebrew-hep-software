@@ -13,7 +13,7 @@ class Sherpa < Formula
 
   depends_on 'lhapdf'
 
-  depends_on 'pythia8'
+  depends_on 'flanni/hep-software/pythia8'
   
   depends_on 'fastjet'
   
