@@ -33,7 +33,7 @@ class Sherpa < Formula
       --enable-hepevtsize=100000
     ]
 
-    system "echo", "#PATH"
+    system "echo", "$PATH"
     system "./configure", *args
     system "make", "install"
 
