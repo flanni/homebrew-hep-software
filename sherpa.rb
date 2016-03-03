@@ -28,8 +28,8 @@ class Sherpa < Formula
       --enable-analysis
       --enable-hepmc2=#{Formula['hepmc'].opt_prefix}
       --enable-lhapdf=#{Formula['lhapdf'].opt_prefix}
-      --enable-pythia=#{Formula['pythia8'].opt_prefix}
-      --enable-root=#{Formula['root6'].opt_prefix}
+      --enable-pythia=#{Formula['flanni/hep-software/pythia8'].opt_prefix}
+      --enable-root=#{Formula['flanni/hep-software/root6'].opt_prefix}
       --enable-hepevtsize=100000
     ]
 
