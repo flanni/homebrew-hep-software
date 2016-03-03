@@ -17,7 +17,7 @@ class Sherpa < Formula
   
   depends_on 'fastjet'
   
-  depends_on 'root6'
+  depends_on 'flanni/hep-software/root6'
   
   
    def install
