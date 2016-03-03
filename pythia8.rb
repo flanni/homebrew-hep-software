@@ -15,7 +15,7 @@ class Pythia8 < Formula
 
   depends_on 'boost'
   
-  depends_on 'root6'
+  depends_on 'flanni/hep-software/root6'
   
   option 'with-vincia', 'Enable VINCIA plugin (http://vincia.hepforge.org)'
   if build.with? 'vincia'
