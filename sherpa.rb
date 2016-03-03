@@ -10,15 +10,11 @@ class Sherpa < Formula
 
 
   depends_on 'hepmc'
-
   depends_on 'lhapdf'
-
   depends_on 'flanni/hep-software/pythia8'
-  
   depends_on 'fastjet'
-  
   depends_on 'flanni/hep-software/root6'
-  
+  depends_on :fortran
   
    def install
     args = %W[
