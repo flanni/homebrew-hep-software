@@ -21,4 +21,5 @@ class FeynHiggs < Formula
     system "make", "install"
 
   end
+  
 end
