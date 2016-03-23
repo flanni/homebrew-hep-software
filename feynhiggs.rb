@@ -14,6 +14,7 @@ class FeynHiggs < Formula
       --64
       --prefix=#{prefix}
       --enable-slhapara
+      --enable-full-g-2
     ]
 
     system "./configure", *args
