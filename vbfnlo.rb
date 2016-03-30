@@ -5,7 +5,6 @@ class Vbfnlo < Formula
   version '2.7.1'
   
   depends_on 'lhapdf'
-  depends_on 'root6'
   depends_on 'hepmc'
   depends_on 'gls'
   depends_on 'looptools'
@@ -16,7 +15,6 @@ class Vbfnlo < Formula
   def install
         args = %W[
       --prefix=#{prefix}
-      --with-root=#{Formula['flanni/hep-software/root6'].opt_prefix}
       --with-LHAPDF=#{Formula['lhapdf'].opt_prefix}
       --with-LOOPTOOLS=#{Formula['looptools'].opt_prefix}
       --with-hepmc=#{Formula['hepmc'].opt_prefix}
