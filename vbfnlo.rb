@@ -8,7 +8,7 @@ class Vbfnlo < Formula
   depends_on 'hepmc'
   depends_on 'gsl'
   depends_on 'looptools'
-  depends_on 'madgraph'
+  depends_on 'madgraph5_amcatnlo'
 
   depends_on :fortran
 
