@@ -6,7 +6,7 @@ class Vbfnlo < Formula
   
   depends_on 'lhapdf'
   depends_on 'hepmc'
-  depends_on 'gls'
+  depends_on 'gsl'
   depends_on 'looptools'
   depends_on 'madgraph'
 
