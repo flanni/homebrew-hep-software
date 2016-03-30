@@ -13,7 +13,6 @@ class Looptools < Formula
 
         system "./configure", *args
         system "make"
-        system "make", "check" if build.with? 'check'
         system "make", "install"
 
         prefix.install 'manual'
