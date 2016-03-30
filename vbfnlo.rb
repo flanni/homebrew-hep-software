@@ -15,7 +15,7 @@ class Vbfnlo < Formula
   def install
         args = %W[
       --prefix=#{prefix}
-      --with-root=#{Formula['root6'].opt_prefix}
+      --with-root=#{Formula['flanni/hep-software/root6'].opt_prefix}
       --with-LHAPDF=#{Formula['lhapdf'].opt_prefix}
       --with-LOOPTOOLS=#{Formula['looptools'].opt_prefix}
       --with-hepmc=#{Formula['hepmc'].opt_prefix}
