@@ -2,7 +2,8 @@ class Vbfnlo < Formula
   homepage 'https://www.itp.kit.edu/vbfnlo/wiki/doku.php?id=overview'
   url 'https://www.itp.kit.edu/vbfnlo/wiki/lib/exe/fetch.php?media=download:vbfnlo-2.7.1.tgz'
   sha256 '497690977ed72f1342ab97e9a330fff38f2e9b5ceeef38834cf4b209f3212d58'
-
+  version '2.7.1'
+  
   depends_on 'lhapdf'
   depends_on 'root6'
   depends_on 'hepmc'
