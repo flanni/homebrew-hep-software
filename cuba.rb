@@ -7,7 +7,6 @@ class Cuba < Formula
 
   def install
         args = %W[
-      --64
       --prefix=#{prefix}
     ]
 
