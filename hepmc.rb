@@ -4,12 +4,13 @@ class Hepmc < Formula
   url "http://hepmc.web.cern.ch/hepmc/releases/HepMC3-3.1.0.tar.gz"
   sha256 "cd37eed619d58369041018b8627274ad790020a4714b54ac05ad1ebc1a6e7f8a"
 
-  option "with-test", "Test during installation"
+  # option "with-test", "Test during installation"
 
   depends_on "cmake" => :build
 
   def install
     flargs = %W[
+      -DHEPMC_ENABLE_ROOTIO=ON
       -DHEPMC3_BUILD_EXAMPLES=OFF
       -DROOT_DIR=#{Formula["root"].opt_prefix}
     ]
