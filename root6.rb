@@ -17,7 +17,7 @@ class Root6 < Formula
   # root5 obviously conflicts, simply need `brew unlink root`
   conflicts_with "root"
   # cling also takes advantage
-  needs :cxx11
+  # needs :cxx11
 
   def config_opt(opt, pkg = opt)
     "--#{(build.with? pkg) ? "enable" : "disable"}-#{opt}"
