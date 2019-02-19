@@ -12,12 +12,12 @@ class Hepmc < Formula
     flargs = %W[
       -DHEPMC_ENABLE_ROOTIO=ON
       -DHEPMC3_BUILD_EXAMPLES=OFF
-      -DROOT_DIR=/usr/local
+      -DROOT_DIR=#{Formula["root"].opt_prefix}
     ]
-#        -DROOT_DIR=#{Formula["root"].opt_prefix}
+
   
     mkdir "../build" do
-      system "cmake", buildpath, "-Dmomentum:STRING=GEV", "-Dlength:STRING=MM", *flargs, *std_cmake_args
+      system "cmake", buildpath, "-Dmomentum:STRING=GEV", "-Dlength:STRING=MM", *flargs #, *std_cmake_args
       system "make"
       system "make", "test" if build.with? "test"
       system "make", "install"
