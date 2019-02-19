@@ -2,7 +2,7 @@ class Hepmc < Formula
   desc "C++ event record for Monte Carlo generators"
   homepage "https://hepmc.web.cern.ch/"
   url "http://lcgapp.cern.ch/project/simu/HepMC/download/HepMC-2.06.09.tar.gz"
-  sha256 "c60724ca9740230825e06c0c36fb2ffe17ff1b1465e8656268a61dffe1611a08"
+  sha256 "211be7de00f454516157d251c8b02255128e00ccf6f02d61ee8b5beb97b24e2c"
 
   option "with-test", "Test during installation"
 
