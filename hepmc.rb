@@ -17,7 +17,7 @@ class Hepmc < Formula
 
   
     mkdir "../build" do
-      system "cmake", buildpath, "-Dmomentum:STRING=GEV", "-Dlength:STRING=MM", *flargs #, *std_cmake_args
+      system "cmake", buildpath, "-Dmomentum:STRING=GEV", "-Dlength:STRING=MM", *flargs, *std_cmake_args
       system "make"
       system "make", "test" if build.with? "test"
       system "make", "install"
