@@ -9,8 +9,13 @@ class Hepmc < Formula
   depends_on "cmake" => :build
 
   def install
+    flargs = %W[
+      -DHEPMC3_BUILD_EXAMPLES=OFF
+      -DROOT_DIR=#{Formula["root"].opt_prefix}
+    ]
+    
     mkdir "../build" do
-      system "cmake", buildpath, "-Dmomentum:STRING=GEV", "-Dlength:STRING=MM", *std_cmake_args
+      system "cmake", buildpath, "-Dmomentum:STRING=GEV", "-Dlength:STRING=MM", *flargs, *std_cmake_args
       system "make"
       system "make", "test" if build.with? "test"
       system "make", "install"
