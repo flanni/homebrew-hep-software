@@ -4,7 +4,6 @@ class Fastjet < Formula
   sha256 '96a927f1a336ad93cff30f07e2dc137a4de8ff7d74d5cd43eb455f42cf5275e3'
 
   depends_on 'cgal'
-  depends_on :fortran
   option 'with-check', 'Test during installation'
 
   def install
