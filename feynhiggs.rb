@@ -8,7 +8,7 @@ class Feynhiggs < Formula
   version "2.11.3"
   sha256 "570746c34efbbfba45b39ea7110b0069354747138ad149204f09819548b87f6a"
 
-  depends_on :fortran
+ 
 
   def install
     args = %W[
