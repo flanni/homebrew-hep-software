@@ -2,10 +2,10 @@ require 'formula'
 
 class Pythia8 < Formula
   
-  desc "Pythia 8.212"
+  desc "Pythia 8.240"
   homepage "http://pythia8.hepforge.org"
-  url "http://home.thep.lu.se/~torbjorn/pythia8/pythia8212.tgz"
-  version "8.212"
+  url "http://home.thep.lu.se/~torbjorn/pythia8/pythia8240.tgz"
+  version "8.240"
   sha256 "f8fb4341c7e8a8be3347eb26b00329a388ccf925313cfbdba655a08d7fd5a70e"
 
 
@@ -26,7 +26,6 @@ class Pythia8 < Formula
     end
 
     depends_on 'wget' => :build
-    depends_on :fortran
     cxxstdlib_check :skip
   end
 
