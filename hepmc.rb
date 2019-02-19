@@ -11,7 +11,7 @@ class Hepmc < Formula
   def install
     flargs = %W[
       -DHEPMC3_BUILD_EXAMPLES=OFF
-      -DROOT_DIR=#{Formula["root"].inc_prefix}
+      -DROOT_DIR=#{Formula["root"].opt_prefix}/include/root
     ]
     
     mkdir "../build" do
