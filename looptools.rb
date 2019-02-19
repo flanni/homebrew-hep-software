@@ -3,7 +3,7 @@ class Looptools < Formula
   url 'http://www.feynarts.de/looptools/LoopTools-2.13.tar.gz'
   sha256 '8065eb9b7546cea34a9ad77d67f4efd440a58c6548e66e7f1761ecee41605bc3'
 
-  depends_on :fortran
+  
 
   def install
         args = %W[
