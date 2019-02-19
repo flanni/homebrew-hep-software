@@ -10,7 +10,6 @@ class Vbfnlo < Formula
   depends_on 'looptools'
   depends_on 'madgraph5_amcatnlo'
 
-  depends_on :fortran
 
   def install
         args = %W[
@@ -21,7 +20,7 @@ class Vbfnlo < Formula
       --with-FEYNHIGGS=#{Formula['feynhiggs'].opt_prefix}
       --with-gsl=#{Formula['gsl'].opt_prefix}
       --enable-kk
-      --enable-spin2
+      --enable-spin2depends_on
       --enable-NLO
       --enable-madgraph
     ]
