@@ -4,9 +4,9 @@ class Lhapdf < Formula
   url "https://www.hepforge.org/archive/lhapdf/LHAPDF-6.2.3.tar.gz"
   sha256 "d6e63addc56c57b6286dc43ffc56d901516f4779a93a0f1547e14b32cfd82dd1"
 
- 
+  depends_on "python"
+  
   def install
-    ENV.std
     args = %W[
       --enable-python
       --prefix=#{prefix}
