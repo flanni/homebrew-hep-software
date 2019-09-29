@@ -58,7 +58,18 @@ __END__
 diff --git a/Makefile b/Makefile
 --- a/Makefile	
 +++ b/Makefile	
-@@ -118,13 +118,17 @@
+@@ -64,8 +64,9 @@
+ endif
+ 
+ # Python.
+-PYTHON_COMMON=-I$(PYTHON_INCLUDE) $(CXX_COMMON) -Wl,-rpath,$(PREFIX_LIB)
++PYTHON_COMMON = ""
+ ifeq ($(PYTHON_USE),true)
++  PYTHON_COMMON=-I$(PYTHON_INCLUDE) $(CXX_COMMON) -Wl,-rpath,$(PREFIX_LIB)
+   TARGETS+=$(LOCAL_LIB)/_pythia8.so
+ endif
+ 
+@@ -118,12 +119,12 @@
  	$(CXX) -x c++ $< -o $@ -c -MD -w $(CXX_LHAPDF)
  $(LOCAL_LIB)/libpythia8lhapdf5.so: $(LOCAL_TMP)/LHAPDF5Plugin.o\
  	$(LOCAL_LIB)/libpythia8.a
@@ -69,18 +80,12 @@ diff --git a/Makefile b/Makefile
  	$(LOCAL_LIB)/libpythia8.a
 -	$(CXX) $^ -o $@ $(CXX_COMMON) $(CXX_SHARED) $(CXX_SONAME)$(notdir $@)\
 -	 -L$(LHAPDF6_LIB) -Wl,-rpath,$(LHAPDF6_LIB) -lLHAPDF
--
-+	ifeq ($(PYTHON_USE),true)
-+		$(CXX) $^ -o $@ $(CXX_COMMON) -w $(PYTHON_COMMON) $(CXX_SHARED) $(CXX_SONAME)$(notdir $@)\
++	$(CXX) $^ -o $@ $(CXX_COMMON) -w $(PYTHON_COMMON) $(CXX_SHARED) $(CXX_SONAME)$(notdir $@)\
 +	 	-L$(LHAPDF6_LIB) -Wl,-rpath,$(LHAPDF6_LIB) -lLHAPDF
-+	else
-+		$(CXX) $^ -o $@ $(CXX_COMMON) -w $(PYTHON_COMMON) $(CXX_SHARED) $(CXX_SONAME)$(notdir $@)\
-+	 	-L$(LHAPDF6_LIB) -Wl,-rpath,$(LHAPDF6_LIB) -lLHAPDF
-+	endif
+ 
  # POWHEG (exclude any executable ending with sh).
  $(LOCAL_TMP)/POWHEGPlugin.o: $(LOCAL_INCLUDE)/Pythia8Plugins/LHAPowheg.h
- 	$(CXX) -x c++ $< -o $@ -c -MD -w $(CXX_COMMON)
-@@ -139,7 +143,7 @@
+@@ -139,7 +140,7 @@
  $(LOCAL_LIB)/pythia8.py: $(LOCAL_INCLUDE)/Pythia8Plugins/PythonWrapper.h
  	SPLIT=`grep -n "PYTHON SOURCE" $< | cut -d : -f 1`;\
  	 SPLIT=$$[$$SPLIT+1]; tail -n +$$SPLIT $< | cut -d "/" -f 3- > $@
