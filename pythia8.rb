@@ -2,20 +2,18 @@ require 'formula'
 
 class Pythia8 < Formula
   
-  desc "Pythia 8.240"
+  desc "Pythia 8.243"
   homepage "http://pythia8.hepforge.org"
-  url "http://home.thep.lu.se/~torbjorn/pythia8/pythia8240.tgz"
-  version "8.240"
-  sha256 "f8fb4341c7e8a8be3347eb26b00329a388ccf925313cfbdba655a08d7fd5a70e"
+  url "http://home.thep.lu.se/~torbjorn/pythia8/pythia8243.tgz"
+  version "8.243"
+  sha256 "f8ec27437d9c75302e192ab68929131a6fd642966fe66178dbe87da6da2b1c79"
 
 
-  depends_on 'hepmc'
-
+  depends_on 'hepmc3'
   depends_on 'lhapdf'
-
   depends_on 'boost'
-  
- 
+  depends_on 'root'
+  depends_on 'fastjet'
   
   option 'with-vincia', 'Enable VINCIA plugin (http://vincia.hepforge.org)'
   if build.with? 'vincia'
@@ -35,10 +33,11 @@ class Pythia8 < Formula
       --disable-dependency-tracking
       --prefix=#{prefix}
       --enable-shared
-      --with-hepmc2=#{Formula['hepmc'].opt_prefix}
+      --with-hepmc3=#{Formula['hepmc3'].opt_prefix}
       --with-lhapdf6=#{Formula['lhapdf'].opt_prefix}
       --with-boost=#{Formula['boost'].opt_prefix}
-      --with-root=#{Formula['root6'].opt_prefix}
+      --with-root=#{Formula['root'].opt_prefix}
+      --with-python=#{Formula['python'].opt_prefix}
     ]
 
     system "./configure", *args
