@@ -18,6 +18,7 @@ class Pythia8 < Formula
   patch :DATA
   
   def install
+    ENV['PATH']="/usr/local/bin:/usr/bin:/bin:/sbin:/usr/sbin"    
     args = %W[
       --prefix=#{prefix}
       --enable-shared
