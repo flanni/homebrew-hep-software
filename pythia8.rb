@@ -27,7 +27,7 @@ class Pythia8 < Formula
     cxxstdlib_check :skip
   end
 
-  patch: DATA
+  patch :DATA
   
   def install
     args = %W[
@@ -83,7 +83,6 @@ class Pythia8 < Formula
   end
 end
 __END__
-
 diff -u Makefile.orig Makefile
 --- Makefile.orig	2019-09-29 11:42:56.000000000 +0200
 +++ Makefile	2019-09-29 11:43:07.000000000 +0200
