@@ -27,6 +27,8 @@ class Pythia8 < Formula
     cxxstdlib_check :skip
   end
 
+  patch: DATA
+  
   def install
     args = %W[
       --disable-debug
@@ -80,3 +82,17 @@ class Pythia8 < Formula
     EOS
   end
 end
+__END__
+
+diff -u Makefile.orig Makefile
+--- Makefile.orig	2019-09-29 11:42:56.000000000 +0200
++++ Makefile	2019-09-29 11:43:07.000000000 +0200
+@@ -139,7 +139,7 @@
+ $(LOCAL_LIB)/pythia8.py: $(LOCAL_INCLUDE)/Pythia8Plugins/PythonWrapper.h
+ 	SPLIT=`grep -n "PYTHON SOURCE" $< | cut -d : -f 1`;\
+ 	 SPLIT=$$[$$SPLIT+1]; tail -n +$$SPLIT $< | cut -d "/" -f 3- > $@
+-	$(PYTHON_BIN)python -m compileall $(LOCAL_LIB)
++	$(PYTHON_BIN)/python -m compileall $(LOCAL_LIB)
+ $(LOCAL_LIB)/_pythia8.so: $(LOCAL_INCLUDE)/Pythia8Plugins/PythonWrapper.h\
+ 	$(LOCAL_LIB)/pythia8.py $(wildcard $(LOCAL_INCLUDE)/*/*.h) |\
+ 	$(LOCAL_LIB)/libpythia8$(LIB_SUFFIX)
