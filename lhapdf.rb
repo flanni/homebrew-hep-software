@@ -6,6 +6,7 @@ class Lhapdf < Formula
 
  
   def install
+    ENV.std
     args = %W[
       --enable-python
       --prefix=#{prefix}
