@@ -44,16 +44,6 @@ class Pythia8 < Formula
     system "make -C #{prefix}/examples/ main41"
     system "#{prefix}/examples/main41.exe"
   end
-
-  def caveats; <<-EOS.undent
-    It is recommended to 'brew install sacrifice' now, as
-    the easiest way to generate Pythia 8 events.
-
-    Otherwise, programs can be built against the Pythia 8
-    libraries by making use of 'pythia8-config'.
-
-    EOS
-  end
 end
 __END__
 diff --git a/Makefile b/Makefile
