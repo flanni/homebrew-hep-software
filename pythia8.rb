@@ -30,8 +30,6 @@ class Pythia8 < Formula
   
   def install
     args = %W[
-      --disable-debug
-      --disable-dependency-tracking
       --prefix=#{prefix}
       --enable-shared
       --with-hepmc3=#{Formula['hepmc3'].opt_prefix}
