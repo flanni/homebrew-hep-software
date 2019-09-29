@@ -7,6 +7,7 @@ class Lhapdf < Formula
   depends_on "python"
   
   def install
+    ENV['PATH']="/usr/local/bin:${PATH}"
     args = %W[
       --enable-python
       --prefix=#{prefix}
