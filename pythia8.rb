@@ -83,9 +83,9 @@ class Pythia8 < Formula
   end
 end
 __END__
-diff -u Makefile.orig Makefile
---- Makefile.orig	2019-09-29 11:42:56.000000000 +0200
-+++ Makefile	2019-09-29 11:43:07.000000000 +0200
+diff --git a/Makefile b/Makefile
+--- a/Makefile	
++++ b/Makefile	
 @@ -139,7 +139,7 @@
  $(LOCAL_LIB)/pythia8.py: $(LOCAL_INCLUDE)/Pythia8Plugins/PythonWrapper.h
  	SPLIT=`grep -n "PYTHON SOURCE" $< | cut -d : -f 1`;\
