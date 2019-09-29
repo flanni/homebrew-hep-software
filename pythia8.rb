@@ -14,17 +14,6 @@ class Pythia8 < Formula
   depends_on 'boost'
   depends_on 'fastjet'
   
-  option 'with-vincia', 'Enable VINCIA plugin (http://vincia.hepforge.org)'
-  if build.with? 'vincia'
-
-    resource 'vincia' do
-      url 'http://www.hepforge.org/archive/vincia/vincia-1.1.03.tgz'
-      sha1 'df389d134284ecdd51073a7a62d71bb9eedb79e6'
-    end
-
-    depends_on 'wget' => :build
-    cxxstdlib_check :skip
-  end
 
   patch :DATA
   
@@ -32,6 +21,7 @@ class Pythia8 < Formula
     args = %W[
       --prefix=#{prefix}
       --enable-shared
+      --with-fastjet3=#{Formula['fastjet'].opt_prefix}
       --with-hepmc3=#{Formula['hepmc3'].opt_prefix}
       --with-lhapdf6=#{Formula['lhapdf'].opt_prefix}
       --with-boost=#{Formula['boost'].opt_prefix}
