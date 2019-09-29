@@ -43,20 +43,6 @@ class Pythia8 < Formula
 
     prefix.install 'examples'
 
-    if build.with? 'vincia'
-      resource('vincia').stage do
-        # Must tell VINCIA where to find Pythia 8 and libgfortran
-        ENV['PYTHIA8'] = buildpath
-        libgfortran = `$FC --print-file-name libgfortran.dylib`.chomp
-        system "make", "FLIBS=-L#{File.dirname libgfortran} -lgfortran"
-
-        (lib/'archive').install Dir['lib/archive/*']
-        include.install Dir['include/*']
-        (prefix/'xmldoc').install Dir['xmldoc/*']
-        prefix.install 'README.TXT' => 'README.vincia'
-        (share/'vincia').install 'antennae', 'tunes'
-      end
-    end
   end
 
   test do
