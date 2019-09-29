@@ -12,7 +12,6 @@ class Pythia8 < Formula
   depends_on 'hepmc3'
   depends_on 'lhapdf'
   depends_on 'boost'
-  depends_on 'root'
   depends_on 'fastjet'
   
   option 'with-vincia', 'Enable VINCIA plugin (http://vincia.hepforge.org)'
@@ -38,7 +37,6 @@ class Pythia8 < Formula
       --with-hepmc3=#{Formula['hepmc3'].opt_prefix}
       --with-lhapdf6=#{Formula['lhapdf'].opt_prefix}
       --with-boost=#{Formula['boost'].opt_prefix}
-      --with-root=#{Formula['root'].opt_prefix}
       --with-python=#{Formula['python'].opt_prefix}
     ]
 
