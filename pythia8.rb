@@ -2,11 +2,11 @@ require 'formula'
 
 class Pythia8 < Formula
   
-  desc "Pythia 8.243"
+  desc "Pythia 8.302"
   homepage "http://pythia8.hepforge.org"
-  url "http://home.thep.lu.se/~torbjorn/pythia8/pythia8243.tgz"
-  version "8.243"
-  sha256 "f8ec27437d9c75302e192ab68929131a6fd642966fe66178dbe87da6da2b1c79"
+  url "http://home.thep.lu.se/~torbjorn/pythia8/pythia8302.tgz"
+  version "8.302"
+  sha256 "7372e4cc6f48a074e6b7bc426b040f218ec4a64b0a55e89da6af56933b5f5085"
 
 
   depends_on 'hepmc3'
