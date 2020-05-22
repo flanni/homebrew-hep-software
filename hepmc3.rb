@@ -13,7 +13,7 @@ class Hepmc3 < Formula
   def install
     mkdir "../build" do
       args = %W[
-        -DCMAKE_INSTALL_PREFIX=#{prefix},
+        -DCMAKE_INSTALL_PREFIX=#{prefix}
         -DCMAKE_PYTHON_VERSIONS=pypy3
       ]
       args<<"-DHEPMC3_ENABLE_TEST=ON" if build.with? "test"
