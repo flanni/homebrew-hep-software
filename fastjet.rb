@@ -1,8 +1,8 @@
 class Fastjet < Formula
   desc "Package for jet finding in pp and ee collisions"
   homepage "http://fastjet.fr"
-  url "http://fastjet.fr/repo/fastjet-3.3.2.tar.gz"
-  sha256 "3f59af13bfc54182c6bb0b0a6a8541b409c6fda5d105f17e03c4cce8db9963c2"
+  url "http://fastjet.fr/repo/fastjet-3.3.4.tar.gz"
+  sha256 "432b51401e1335697c9248519ce3737809808fc1f6d1644bfae948716dddfc03"
 
   option "with-test", "Test during installation"
 
