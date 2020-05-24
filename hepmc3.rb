@@ -12,6 +12,7 @@ class Hepmc3 < Formula
 
   stable do
     patch :p0, <<EOS
+diff -u python/cmake_install.cmake.orig python/cmake_install.cmake
 --- python/cmake_install.cmake.orig
 +++ python/cmake_install.cmake	
 @@ -45,9 +45,6 @@
