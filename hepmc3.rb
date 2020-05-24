@@ -10,6 +10,8 @@ class Hepmc3 < Formula
   depends_on "cmake" => :build
   depends_on "root" => :optional
 
+  patch :DATA
+  
   def install
     mkdir "../build" do
       args = %W[
@@ -55,6 +57,7 @@ diff -u python/cmake_install.cmake.orig python/cmake_install.cmake
        "$ENV{DESTDIR}/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/pyHepMC3/search/pyHepMC3search.so")
      if(CMAKE_INSTALL_DO_STRIP)
 __END__
+
 diff -u search/cmake_install.cmake.orig search/cmake_install.cmake
 --- search/cmake_install.cmake.orig	2020-05-24 12:17:57.000000000 +0200
 +++ search/cmake_install.cmake	2020-05-24 12:19:02.000000000 +0200
