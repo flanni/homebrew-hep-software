@@ -13,9 +13,9 @@ class Pythia8 < Formula
   depends_on 'lhapdf'
   depends_on 'boost'
   depends_on 'fastjet'
-  
+  depends_on 'gnu-sed'
 
-#  patch :DATA
+  patch :DATA
   
   def install
     ENV['PATH']="/usr/local/bin:/usr/bin:/bin:/sbin:/usr/sbin"    
@@ -43,3 +43,19 @@ class Pythia8 < Formula
     system "#{prefix}/examples/main41.exe"
   end
 end
+__END__
+diff --git a/plugins/python/Makefile b/plugins/python/Makefile
+--- a/plugins/python/Makefile	2020-05-24 14:59:40.000000000 +0200
++++ b/plugins/python/Makefile	2020-05-24 15:04:55.000000000 +0200
+@@ -59,9 +59,8 @@
+ # Build the headers.
+ $(LOCAL_INCLUDE)/Pythia8%.h: $(TOP_INCLUDE)/Pythia8%.h
+ 	@mkdir -p $(dir $@)
+-	@sed "s/protected:/public:/g" $< |\
+-	 sed "s/\(const  *Info\& *info  *=  *infoPrivate;\)/\1\n  "\
+-	"Info infoPython() {return Info(infoPrivate);}/g" > $@
++	@gsed "s/protected:/public:/g" $< |\
++	 gsed "s/\(const  *Info\& *info  *=  *infoPrivate;\)/\1\nInfo infoPython() {return Info(infoPrivate);}/g" > $@
+ 
+ # Build the objects.
+ $(LOCAL_TMP)/%.o: $(LOCAL_SRC)/%.cpp
