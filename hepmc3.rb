@@ -21,7 +21,16 @@ class Hepmc3 < Formula
       system "cmake", buildpath, *args
       system "make"
       system "make", "test" if build.with? "test"
-      patch <<EOS
+      patch :DATA
+      system "make", "install"
+    end
+  end
+
+  test do
+    system "make", "test"
+  end
+end
+__END__
 diff --git a/python/cmake_install.cmake b/python/cmake_install.cmake
 --- a/python/cmake_install.cmake
 +++ b/python/cmake_install.cmake	
@@ -46,11 +55,3 @@ diff --git a/python/cmake_install.cmake b/python/cmake_install.cmake
        "$ENV{DESTDIR}/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/pyHepMC3/search/pyHepMC3search.so")
      if(CMAKE_INSTALL_DO_STRIP)
 EOS
-      system "make", "install"
-    end
-  end
-
-  test do
-    system "make", "test"
-  end
-end
