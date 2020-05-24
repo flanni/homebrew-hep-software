@@ -11,7 +11,7 @@ class Hepmc3 < Formula
   depends_on "root" => :optional
 
   stable do
-    patch :p0, <<EOS.undent
+    patch :p0, <<EOS
 --- python/cmake_install.cmake.orig
 +++ python/cmake_install.cmake	
 @@ -45,9 +45,6 @@
