@@ -10,7 +10,7 @@ class Hepmc3 < Formula
   depends_on "cmake" => :build
   depends_on "root" => :optional
 
-  patch :DATA
+  patch :p0,:DATA
   
   def install
     mkdir "../build" do
@@ -32,9 +32,9 @@ class Hepmc3 < Formula
   end
 end
 __END__
-diff --git a/python/cmake_install.cmake b/python/cmake_install.cmake
---- a/python/cmake_install.cmake
-+++ b/python/cmake_install.cmake	
+diff -u python/cmake_install.cmake.orig python/cmake_install.cmake
+--- python/cmake_install.cmake.orig
++++ python/cmake_install.cmake.orig	
 @@ -45,9 +45,6 @@
    if(EXISTS "$ENV{DESTDIR}/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/pyHepMC3/pyHepMC3.so" AND
       NOT IS_SYMLINK "$ENV{DESTDIR}/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/pyHepMC3/pyHepMC3.so")
