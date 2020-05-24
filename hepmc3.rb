@@ -29,3 +29,52 @@ class Hepmc3 < Formula
     system "make", "test"
   end
 end
+
+__END__
+diff --git python/cmake_install.cmake.orig python/cmake_install.cmake
+--- python/cmake_install.cmake.orig	
++++ python/cmake_install.cmake	
+@@ -45,9 +45,6 @@
+   if(EXISTS "$ENV{DESTDIR}/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/pyHepMC3/pyHepMC3.so" AND
+      NOT IS_SYMLINK "$ENV{DESTDIR}/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/pyHepMC3/pyHepMC3.so")
+     execute_process(COMMAND /usr/bin/install_name_tool
+-      -delete_rpath "/Users/flanni/Tests/HepMC3-3.2.1/outputs/lib"
+-      "$ENV{DESTDIR}/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/pyHepMC3/pyHepMC3.so")
+-    execute_process(COMMAND /usr/bin/install_name_tool
+       -add_rpath "/usr/local/Cellar/hepmc/3.2.1/lib"
+       "$ENV{DESTDIR}/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/pyHepMC3/pyHepMC3.so")
+     if(CMAKE_INSTALL_DO_STRIP)
+@@ -93,9 +90,6 @@
+   if(EXISTS "$ENV{DESTDIR}/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/pyHepMC3/search/pyHepMC3search.so" AND
+      NOT IS_SYMLINK "$ENV{DESTDIR}/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/pyHepMC3/search/pyHepMC3search.so")
+     execute_process(COMMAND /usr/bin/install_name_tool
+-      -delete_rpath "/Users/flanni/Tests/HepMC3-3.2.1/outputs/lib"
+-      "$ENV{DESTDIR}/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/pyHepMC3/search/pyHepMC3search.so")
+-    execute_process(COMMAND /usr/bin/install_name_tool
+       -add_rpath "/usr/local/Cellar/hepmc/3.2.1/lib"
+       "$ENV{DESTDIR}/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/pyHepMC3/search/pyHepMC3search.so")
+     if(CMAKE_INSTALL_DO_STRIP)
+
+diff --git search/cmake_install.cmake.orig search/cmake_install.cmake
+--- search/cmake_install.cmake.orig	2020-05-24 12:17:57.000000000 +0200
++++ search/cmake_install.cmake	2020-05-24 12:19:02.000000000 +0200
+@@ -37,9 +37,6 @@
+   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libHepMC3search.3.dylib" AND
+      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libHepMC3search.3.dylib")
+     execute_process(COMMAND /usr/bin/install_name_tool
+-      -delete_rpath "/Users/flanni/Tests/HepMC3-3.2.1/outputs/lib"
+-      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libHepMC3search.3.dylib")
+-    execute_process(COMMAND /usr/bin/install_name_tool
+       -add_rpath "/usr/local/Cellar/hepmc/3.2.1/lib"
+       "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libHepMC3search.3.dylib")
+     if(CMAKE_INSTALL_DO_STRIP)
+@@ -53,9 +50,6 @@
+   if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libHepMC3search.dylib" AND
+      NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libHepMC3search.dylib")
+     execute_process(COMMAND /usr/bin/install_name_tool
+-      -delete_rpath "/Users/flanni/Tests/HepMC3-3.2.1/outputs/lib"
+-      "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libHepMC3search.dylib")
+-    execute_process(COMMAND /usr/bin/install_name_tool
+       -add_rpath "/usr/local/Cellar/hepmc/3.2.1/lib"
+       "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/libHepMC3search.dylib")
+     if(CMAKE_INSTALL_DO_STRIP)
