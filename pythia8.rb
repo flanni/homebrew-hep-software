@@ -26,7 +26,7 @@ class Pythia8 < Formula
       --with-hepmc3=#{Formula['hepmc3'].opt_prefix}
       --with-lhapdf6=#{Formula['lhapdf'].opt_prefix}
       --with-boost=#{Formula['boost'].opt_prefix}
-      --with-python="/Library/Frameworks/Python.framework/Versions/3.8/"
+      --with-python-config="/Library/Frameworks/Python.framework/Versions/3.8/bin/python3.8-config"
     ]
 
     system "./configure", *args
