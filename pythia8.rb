@@ -21,11 +21,9 @@ class Pythia8 < Formula
     ENV['PATH']="/usr/local/bin:/usr/bin:/bin:/sbin:/usr/sbin"    
     args = %W[
       --prefix=#{prefix}
-      --enable-shared
       --with-fastjet3=#{Formula['fastjet'].opt_prefix}
       --with-hepmc3=#{Formula['hepmc3'].opt_prefix}
       --with-lhapdf6=#{Formula['lhapdf'].opt_prefix}
-      --with-boost=#{Formula['boost'].opt_prefix}
       --with-python-config="/Library/Frameworks/Python.framework/Versions/3.8/bin/python3.8-config"
     ]
 
