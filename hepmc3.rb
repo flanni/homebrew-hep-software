@@ -34,7 +34,7 @@ class Hepmc3 < Formula
        -add_rpath "/usr/local/Cellar/hepmc/3.2.1/lib"
        "$ENV{DESTDIR}/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/pyHepMC3/search/pyHepMC3search.so")
      if(CMAKE_INSTALL_DO_STRIP)
-    EOS
+EOS
   end
   
   def install
