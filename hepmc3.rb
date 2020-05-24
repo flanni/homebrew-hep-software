@@ -9,9 +9,19 @@ class Hepmc3 < Formula
 
   depends_on "cmake" => :build
   depends_on "root" => :optional
-
-  stable do
-    patch <<EOS
+  
+  def install
+    mkdir "../build" do
+      args = %W[
+        -DCMAKE_INSTALL_PREFIX=#{prefix}
+        -DHEPMC3_PYTHON_VERSIONS=3.X
+      ]
+      args<<"-DHEPMC3_ENABLE_TEST=ON" if build.with? "test"
+      args<<"-DHEPMC3_ENABLE_ROOTIO=OFF" if build.without? "root"
+      system "cmake", buildpath, *args
+      system "make"
+      system "make", "test" if build.with? "test"
+      patch <<EOS
 diff --git a/python/cmake_install.cmake b/python/cmake_install.cmake
 --- a/python/cmake_install.cmake
 +++ b/python/cmake_install.cmake	
@@ -36,19 +46,6 @@ diff --git a/python/cmake_install.cmake b/python/cmake_install.cmake
        "$ENV{DESTDIR}/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/pyHepMC3/search/pyHepMC3search.so")
      if(CMAKE_INSTALL_DO_STRIP)
 EOS
-  end
-  
-  def install
-    mkdir "../build" do
-      args = %W[
-        -DCMAKE_INSTALL_PREFIX=#{prefix}
-        -DHEPMC3_PYTHON_VERSIONS=3.X
-      ]
-      args<<"-DHEPMC3_ENABLE_TEST=ON" if build.with? "test"
-      args<<"-DHEPMC3_ENABLE_ROOTIO=OFF" if build.without? "root"
-      system "cmake", buildpath, *args
-      system "make"
-      system "make", "test" if build.with? "test"
       system "make", "install"
     end
   end
