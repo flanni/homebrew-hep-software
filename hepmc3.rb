@@ -32,7 +32,7 @@ class Hepmc3 < Formula
   end
 end
 __END__
-diff -u python/cmake_install.cmake.orig python/cmake_install.cmake
+diff --git python/cmake_install.cmake.orig python/cmake_install.cmake
 --- python/cmake_install.cmake.orig	
 +++ python/cmake_install.cmake	
 @@ -45,9 +45,6 @@
