@@ -21,7 +21,6 @@ class Hepmc3 < Formula
       system "cmake", buildpath, *args
       system "make"
       system "make", "test" if build.with? "test"
-      patch :DATA
       system "make", "install"
     end
   end
@@ -30,28 +29,3 @@ class Hepmc3 < Formula
     system "make", "test"
   end
 end
-__END__
-diff --git a/python/cmake_install.cmake b/python/cmake_install.cmake
---- a/python/cmake_install.cmake
-+++ b/python/cmake_install.cmake	
-@@ -45,9 +45,6 @@
-   if(EXISTS "$ENV{DESTDIR}/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/pyHepMC3/pyHepMC3.so" AND
-      NOT IS_SYMLINK "$ENV{DESTDIR}/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/pyHepMC3/pyHepMC3.so")
-     execute_process(COMMAND /usr/bin/install_name_tool
--      -delete_rpath "/Users/flanni/Tests/HepMC3-3.2.1/outputs/lib"
--      "$ENV{DESTDIR}/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/pyHepMC3/pyHepMC3.so")
--    execute_process(COMMAND /usr/bin/install_name_tool
-       -add_rpath "/usr/local/Cellar/hepmc/3.2.1/lib"
-       "$ENV{DESTDIR}/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/pyHepMC3/pyHepMC3.so")
-     if(CMAKE_INSTALL_DO_STRIP)
-@@ -93,9 +90,6 @@
-   if(EXISTS "$ENV{DESTDIR}/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/pyHepMC3/search/pyHepMC3search.so" AND
-      NOT IS_SYMLINK "$ENV{DESTDIR}/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/pyHepMC3/search/pyHepMC3search.so")
-     execute_process(COMMAND /usr/bin/install_name_tool
--      -delete_rpath "/Users/flanni/Tests/HepMC3-3.2.1/outputs/lib"
--      "$ENV{DESTDIR}/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/pyHepMC3/search/pyHepMC3search.so")
--    execute_process(COMMAND /usr/bin/install_name_tool
-       -add_rpath "/usr/local/Cellar/hepmc/3.2.1/lib"
-       "$ENV{DESTDIR}/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/pyHepMC3/search/pyHepMC3search.so")
-     if(CMAKE_INSTALL_DO_STRIP)
-EOS
