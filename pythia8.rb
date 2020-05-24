@@ -15,7 +15,7 @@ class Pythia8 < Formula
   depends_on 'fastjet'
   
 
-  patch :DATA
+#  patch :DATA
   
   def install
     ENV['PATH']="/usr/local/bin:/usr/bin:/bin:/sbin:/usr/sbin"    
