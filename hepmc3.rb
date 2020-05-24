@@ -29,7 +29,6 @@ class Hepmc3 < Formula
     system "make", "test"
   end
 end
-
 __END__
 diff --git python/cmake_install.cmake.orig python/cmake_install.cmake
 --- python/cmake_install.cmake.orig	
