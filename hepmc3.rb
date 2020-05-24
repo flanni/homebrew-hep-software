@@ -10,31 +10,11 @@ class Hepmc3 < Formula
   depends_on "cmake" => :build
   depends_on "root" => :optional
 
-  patch :p0,:DATA
-  
-  def install
-    mkdir "../build" do
-      args = %W[
-        -DCMAKE_INSTALL_PREFIX=#{prefix}
-        -DHEPMC3_PYTHON_VERSIONS=3.X
-      ]
-      args<<"-DHEPMC3_ENABLE_TEST=ON" if build.with? "test"
-      args<<"-DHEPMC3_ENABLE_ROOTIO=OFF" if build.without? "root"
-      system "cmake", buildpath, *args
-      system "make"
-      system "make", "test" if build.with? "test"
-      system "make", "install"
-    end
-  end
-
-  test do
-    system "make", "test"
-  end
-end
-__END__
+  stable do
+    patch :p0, <<EOS.undent
 diff -u python/cmake_install.cmake.orig python/cmake_install.cmake
 --- python/cmake_install.cmake.orig
-+++ python/cmake_install.cmake.orig	
++++ python/cmake_install.cmake	
 @@ -45,9 +45,6 @@
    if(EXISTS "$ENV{DESTDIR}/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/pyHepMC3/pyHepMC3.so" AND
       NOT IS_SYMLINK "$ENV{DESTDIR}/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/pyHepMC3/pyHepMC3.so")
@@ -55,3 +35,25 @@ diff -u python/cmake_install.cmake.orig python/cmake_install.cmake
        -add_rpath "/usr/local/Cellar/hepmc/3.2.1/lib"
        "$ENV{DESTDIR}/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8/site-packages/pyHepMC3/search/pyHepMC3search.so")
      if(CMAKE_INSTALL_DO_STRIP)
+    EOS
+  end
+  
+  def install
+    mkdir "../build" do
+      args = %W[
+        -DCMAKE_INSTALL_PREFIX=#{prefix}
+        -DHEPMC3_PYTHON_VERSIONS=3.X
+      ]
+      args<<"-DHEPMC3_ENABLE_TEST=ON" if build.with? "test"
+      args<<"-DHEPMC3_ENABLE_ROOTIO=OFF" if build.without? "root"
+      system "cmake", buildpath, *args
+      system "make"
+      system "make", "test" if build.with? "test"
+      system "make", "install"
+    end
+  end
+
+  test do
+    system "make", "test"
+  end
+end
