@@ -11,10 +11,16 @@ class Hepmc3 < Formula
   depends_on "root" => :optional
   
   def install
+    ENV['PATH']="/Library/Frameworks/Python.framework/Versions/3.8/bin:/usr/local/bin:/usr/bin:/bin:/sbin:/usr/sbin"
+    ENV['ROOTSYS']="/usr/local"
+    ENV['PKG_CONFIG_PATH']="/Library/Frameworks/Python.framework/Versions/3.8/lib/pkgconfig"
+    ENV['PYTHONPATH']="/Library/Frameworks/Python.framework/Versions/3.8/lib/:/usr/local/Cellar/root/6.20.04_2/lib"
     mkdir "../build" do
       args = %W[
         -DCMAKE_INSTALL_PREFIX=#{prefix}
         -DHEPMC3_PYTHON_VERSIONS=3.X
+        -DHEPMC3_ENABLE_PYTHON=ON
+
       ]
       args<<"-DHEPMC3_ENABLE_TEST=ON" if build.with? "test"
       args<<"-DHEPMC3_ENABLE_ROOTIO=ON" if build.with? "root"
