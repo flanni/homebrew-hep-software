@@ -20,7 +20,8 @@ class Hepmc3 < Formula
         -DCMAKE_INSTALL_PREFIX=#{prefix}
         -DHEPMC3_PYTHON_VERSIONS=3.X
         -DHEPMC3_ENABLE_PYTHON=ON
-
+        -DHEPMC3_BUILD_EXAMPLES=ON
+        -DHEPMC3_BUILD_DOCS=ON
       ]
       args<<"-DHEPMC3_ENABLE_TEST=ON" if build.with? "test"
       args<<"-DHEPMC3_ENABLE_ROOTIO=ON" if build.with? "root"
