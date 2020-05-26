@@ -27,7 +27,7 @@ class Pythia8 < Formula
       --with-python-config="/Library/Frameworks/Python.framework/Versions/3.8/bin/python3.8-config"
       --with-python-bin="/Library/Frameworks/Python.framework/Versions/3.8/bin"
       --with-python-lib="/Library/Frameworks/Python.framework/Versions/3.8/lib"
-      --with-python-include="/Library/Frameworks/Python.framework/Versions/3.8/include"
+      --with-python-include="/Library/Frameworks/Python.framework/Versions/3.8/include/python3.8"
     ]
 
     system "./configure", *args
