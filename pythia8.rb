@@ -18,7 +18,7 @@ class Pythia8 < Formula
   patch :DATA
   
   def install
-    ENV['CXX']="g++"
+    ENV['CXX']="clang++"
     ENV['PATH']="/Library/Frameworks/Python.framework/Versions/3.8/bin:/usr/local/bin:/usr/bin:/bin:/sbin:/usr/sbin"    
     args = %W[
       --prefix=#{prefix}
