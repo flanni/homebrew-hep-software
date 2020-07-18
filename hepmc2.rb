@@ -18,6 +18,8 @@ class Hepmc2 < Formula
     mkdir "../build" do
       args = %W[
         -DCMAKE_INSTALL_PREFIX=#{prefix}
+        -Dmomentum:STRING=GEV 
+        -Dlength:STRING=MM 
       ]
       system "cmake", buildpath, *args
       system "make"
