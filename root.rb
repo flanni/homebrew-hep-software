@@ -17,10 +17,8 @@ class Root < Formula
   # https://github.com/Homebrew/brew/issues/5068
   depends_on "libxml2" if MacOS.version >= :mojave
   depends_on "lz4"
-  depends_on "numpy" # for tmva
   depends_on "openssl@1.1"
   depends_on "pcre"
-  depends_on "python@3.8"
   depends_on "tbb"
   depends_on "xrootd"
   depends_on "xz" # for LZMA
@@ -67,8 +65,8 @@ class Root < Formula
       -Dxrootd=ON
     ]
 
-    cxx_version = (MacOS.version < :mojave) ? 14 : 17
-    args << "-DCMAKE_CXX_STANDARD=#{cxx_version}"
+    #cxx_version = (MacOS.version < :mojave) ? 14 : 17
+    #args << "-DCMAKE_CXX_STANDARD=#{cxx_version}"
 
     # Workaround the shim directory being embedded into the output
     inreplace "build/unix/compiledata.sh", "`type -path $CXX`", ENV.cxx
@@ -80,7 +78,8 @@ class Root < Formula
 
       chmod 0755, Dir[bin/"*.*sh"]
 
-      version = Language::Python.major_minor_version "/Library/Frameworks/Python.framework/Versions/Current/bin/python"
+      #version = Language::Python.major_minor_version "/Library/Frameworks/Python.framework/Versions/Current/bin/python"
+      version = "3.9"
       pth_contents = "import site; site.addsitedir('#{lib}/root')\n"
       (prefix/"lib/python#{version}/site-packages/homebrew-root.pth").write pth_contents
     end
