@@ -4,26 +4,6 @@ class Root < Formula
   url "https://root.cern.ch/download/root_v6.22.00.source.tar.gz"
   version "6.22.00"
   sha256 "efd961211c0f9cd76cf4a486e4f89badbcf1d08e7535bba556862b3c1a80beed"
-  revision 1
-  head "https://github.com/root-project/root.git"
-
-  bottle do
-    sha256 "22f63d109ebc3d2a831df49744a404a8794aa8f55c55f2f2ecfe63f8f081b1c0" => :catalina
-    sha256 "572b4654f5514d888c97609c36c4409f5c0a82ad9a9d8046b99abd05759b04da" => :mojave
-    sha256 "e77cccf4df06bb140b3b7ec38832b0edd6097a6f8fd24cd025b5b7178f077d1a" => :high_sierra
-  end
-
-  # https://github.com/Homebrew/homebrew-core/issues/30726
-  # strings libCling.so | grep Xcode:
-  #  /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1
-  #  /Applications/Xcode.app/Contents/Developer
-  pour_bottle? do
-    reason "The bottle hardcodes locations inside Xcode.app"
-    satisfy do
-      MacOS::Xcode.installed? &&
-        MacOS::Xcode.prefix.to_s.include?("/Applications/Xcode.app/")
-    end
-  end
 
   depends_on "cmake" => :build
   depends_on "cfitsio"
