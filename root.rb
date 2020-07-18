@@ -100,7 +100,7 @@ class Root < Formula
 
       chmod 0755, Dir[bin/"*.*sh"]
 
-      version = Language::Python.major_minor_version /Library/Frameworks/Python.framework/Versions/Current/bin/python
+      version = Language::Python.major_minor_version "/Library/Frameworks/Python.framework/Versions/Current/bin/python"
       pth_contents = "import site; site.addsitedir('#{lib}/root')\n"
       (prefix/"lib/python#{version}/site-packages/homebrew-root.pth").write pth_contents
     end
