@@ -29,16 +29,16 @@ class Root < Formula
   skip_clean "bin"
 
   def install
-    # Work around "error: no member named 'signbit' in the global namespace"
-    ENV.delete("SDKROOT") if DevelopmentTools.clang_build_version >= 900
-
-    # Freetype/afterimage/gl2ps/lz4 are vendored in the tarball, so are fine.
-    # However, this is still permitting the build process to make remote
-    # connections. As a hack, since upstream support it, we inreplace
-    # this file to "encourage" the connection over HTTPS rather than HTTP.
-    inreplace "cmake/modules/SearchInstalledSoftware.cmake",
-              "http://lcgpackages",
-              "https://lcgpackages"
+    ## Work around "error: no member named 'signbit' in the global namespace"
+    #ENV.delete("SDKROOT") if DevelopmentTools.clang_build_version >= 900
+    # 
+    ## Freetype/afterimage/gl2ps/lz4 are vendored in the tarball, so are fine.
+    ## However, this is still permitting the build process to make remote
+    ## connections. As a hack, since upstream support it, we inreplace
+    ## this file to "encourage" the connection over HTTPS rather than HTTP.
+    #inreplace "cmake/modules/SearchInstalledSoftware.cmake",
+    #          "http://lcgpackages",
+    #          "https://lcgpackages"
 
     args = std_cmake_args + %W[
       -DCLING_CXX_PATH=clang++
@@ -68,8 +68,8 @@ class Root < Formula
     #cxx_version = (MacOS.version < :mojave) ? 14 : 17
     #args << "-DCMAKE_CXX_STANDARD=#{cxx_version}"
 
-    # Workaround the shim directory being embedded into the output
-    inreplace "build/unix/compiledata.sh", "`type -path $CXX`", ENV.cxx
+    ## Workaround the shim directory being embedded into the output
+    #inreplace "build/unix/compiledata.sh", "`type -path $CXX`", ENV.cxx
 
     mkdir "builddir" do
       system "cmake", "..", *args
