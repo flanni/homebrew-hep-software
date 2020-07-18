@@ -1,13 +1,14 @@
 class Lhapdf < Formula
   desc "PDF interpolation and evaluation"
   homepage "https://lhapdf.hepforge.org/"
-  url "https://www.hepforge.org/archive/lhapdf/LHAPDF-6.2.3.tar.gz"
-  sha256 "d6e63addc56c57b6286dc43ffc56d901516f4779a93a0f1547e14b32cfd82dd1"
+  url "https://www.hepforge.org/archive/lhapdf/LHAPDF-6.3.0.tar.gz"
+  sha256 "ed4d8772b7e6be26d1a7682a13c87338d67821847aa1640d78d67d2cef8b9b5d"
 
   depends_on "python"
   
   def install
-    ENV['PATH']="/usr/local/bin:/usr/bin:/bin:/sbin:/usr/sbin"
+    ENV['PYTHONPATH']="/usr/local/lib/root:/usr/local/Cellar/pythia8/8.302/lib"
+    ENV['PATH']="/Library/Frameworks/Python.framework/Versions/Current/bin/:/usr/local/bin:/usr/bin:/bin:/sbin:/usr/sbin"
     args = %W[
       --enable-python
       --prefix=#{prefix}
