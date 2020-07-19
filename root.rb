@@ -41,7 +41,7 @@ class Root < Formula
     #          "https://lcgpackages"
 
     args = std_cmake_args + %W[
-      -DCLING_CXX_PATH=clang++
+      -DCLING_CXX_PATH=/usr/bin/clang++
       -DCMAKE_INSTALL_ELISPDIR=#{elisp}
       -DPYTHON_EXECUTABLE=/Library/Frameworks/Python.framework/Versions/Current/bin/python
       -Dbuiltin_cfitsio=OFF
@@ -65,11 +65,11 @@ class Root < Formula
       -Dxrootd=ON
     ]
 
-    #cxx_version = (MacOS.version < :mojave) ? 14 : 17
-    #args << "-DCMAKE_CXX_STANDARD=#{cxx_version}"
+    cxx_version = (MacOS.version < :mojave) ? 14 : 17
+    args << "-DCMAKE_CXX_STANDARD=#{cxx_version}"
 
-    ## Workaround the shim directory being embedded into the output
-    #inreplace "build/unix/compiledata.sh", "`type -path $CXX`", ENV.cxx
+    # Workaround the shim directory being embedded into the output
+    inreplace "build/unix/compiledata.sh", "`type -path $CXX`", ENV.cxx
 
     mkdir "builddir" do
       system "cmake", "..", *args
