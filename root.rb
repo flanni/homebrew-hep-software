@@ -29,19 +29,24 @@ class Root < Formula
   skip_clean "bin"
 
   def install
-    ## Work around "error: no member named 'signbit' in the global namespace"
-    #ENV.delete("SDKROOT") if DevelopmentTools.clang_build_version >= 900
+    
+    # Work around "error: no member named 'signbit' in the global namespace"
+    ENV.delete("SDKROOT") if DevelopmentTools.clang_build_version >= 900
     # 
-    ## Freetype/afterimage/gl2ps/lz4 are vendored in the tarball, so are fine.
-    ## However, this is still permitting the build process to make remote
-    ## connections. As a hack, since upstream support it, we inreplace
-    ## this file to "encourage" the connection over HTTPS rather than HTTP.
-    #inreplace "cmake/modules/SearchInstalledSoftware.cmake",
-    #          "http://lcgpackages",
-    #          "https://lcgpackages"
+    # Freetype/afterimage/gl2ps/lz4 are vendored in the tarball, so are fine.
+    # However, this is still permitting the build process to make remote
+    # connections. As a hack, since upstream support it, we inreplace
+    # this file to "encourage" the connection over HTTPS rather than HTTP.
+    inreplace "cmake/modules/SearchInstalledSoftware.cmake",
+              "http://lcgpackages",
+              "https://lcgpackages"
+    
+    ENV['PATH']="/Library/Frameworks/Python.framework/Versions/3.8/bin:/usr/local/bin:/usr/bin:/bin:/sbin:/usr/sbin"
+    ENV['PKG_CONFIG_PATH']="/Library/Frameworks/Python.framework/Versions/3.8/lib/pkgconfig"
+    ENV['PYTHONPATH']="/Library/Frameworks/Python.framework/Versions/3.8/lib/:/usr/local/Cellar/pythia8/8.302/lib"
 
     args = std_cmake_args + %W[
-      -DCLING_CXX_PATH=/usr/bin/clang++
+      -DCLING_CXX_PATH=clang++
       -DCMAKE_INSTALL_ELISPDIR=#{elisp}
       -DPYTHON_EXECUTABLE=/Library/Frameworks/Python.framework/Versions/Current/bin/python
       -Dbuiltin_cfitsio=OFF
