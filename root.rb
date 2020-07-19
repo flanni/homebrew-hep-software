@@ -41,9 +41,9 @@ class Root < Formula
               "http://lcgpackages",
               "https://lcgpackages"
     
-    ENV['PATH']="/Library/Frameworks/Python.framework/Versions/3.8/bin:/usr/local/bin:/usr/bin:/bin:/sbin:/usr/sbin"
-    ENV['PKG_CONFIG_PATH']="/Library/Frameworks/Python.framework/Versions/3.8/lib/pkgconfig"
-    ENV['PYTHONPATH']="/Library/Frameworks/Python.framework/Versions/3.8/lib/:/usr/local/Cellar/pythia8/8.302/lib"
+    ENV['PATH']="/Library/Frameworks/Python.framework/Versions/Current/bin:/usr/local/bin:/usr/bin:/bin:/sbin:/usr/sbin"
+    ENV['PKG_CONFIG_PATH']="/Library/Frameworks/Python.framework/Versions/Current/lib/pkgconfig"
+    ENV['PYTHONPATH']="/Library/Frameworks/Python.framework/Versions/Current/lib/:/usr/local/Cellar/pythia8/8.302/lib"
 
     args = std_cmake_args + %W[
       -DCLING_CXX_PATH=clang++
