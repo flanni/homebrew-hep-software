@@ -63,6 +63,7 @@ class Root < Formula
       -Dssl=ON
       -Dtmva=ON
       -Dxrootd=ON
+      -Dpythia8=OFF
     ]
 
     cxx_version = (MacOS.version < :mojave) ? 14 : 17
