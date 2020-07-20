@@ -65,10 +65,10 @@ class Root < Formula
       -Dpgsql=OFF
       -Dpyroot=ON
       -Droofit=ON
-      -Dssl=ON
       -Dtmva=ON
       -Dxrootd=ON
       -Dpythia8=OFF
+      -Dproof=OFF
     ]
 
     cxx_version = (MacOS.version < :mojave) ? 14 : 17
