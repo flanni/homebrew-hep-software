@@ -12,10 +12,12 @@ class Atlas < Formula
       -b 64 
       --prefix=#{prefix}
     ]
-
-    system "./configure", *args
-    system "make"
-    system "make", "check" if build.with? "test"
-    system "make", "install"
+    
+    mkdir "build" do
+      system "./configure", *args
+      system "make"
+      system "make", "check" if build.with? "test"
+      system "make", "install"
+    end
   end
 end
