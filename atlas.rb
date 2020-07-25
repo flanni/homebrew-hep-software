@@ -14,7 +14,7 @@ class Atlas < Formula
     ]
     
     mkdir "build" do
-      system "./configure", *args
+      system "../configure", *args
       system "make"
       system "make", "check" if build.with? "test"
       system "make", "install"
