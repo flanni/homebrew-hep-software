@@ -41,7 +41,7 @@ class Root < Formula
               "http://lcgpackages",
               "https://lcgpackages"
     
-    ENV['PATH']="/Library/Frameworks/Python.framework/Versions/Current/bin:/usr/local/bin:/usr/bin:/bin:/sbin:/usr/sbin"
+    ENV['PATH']="/Library/Frameworks/Python.framework/Versions/Current/bin:/usr/local/opt/make/libexec/gnubin:/usr/local/bin:/usr/bin:/bin:/sbin:/usr/sbin"
     ENV['PKG_CONFIG_PATH']="/Library/Frameworks/Python.framework/Versions/Current/lib/pkgconfig"
     ENV['PYTHONPATH']="/Library/Frameworks/Python.framework/Versions/Current/lib/:/usr/local/Cellar/pythia8/8.302/lib"
 
