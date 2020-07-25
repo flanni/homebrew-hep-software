@@ -45,8 +45,8 @@ class Root < Formula
     ENV['PKG_CONFIG_PATH']="/Library/Frameworks/Python.framework/Versions/Current/lib/pkgconfig"
     ENV['PYTHONPATH']="/Library/Frameworks/Python.framework/Versions/Current/lib/:/usr/local/Cellar/pythia8/8.302/lib"
 
+    #-DCLING_CXX_PATH=clang++
     args = std_cmake_args + %W[
-      -DCLING_CXX_PATH=clang++
       -DCMAKE_INSTALL_ELISPDIR=#{elisp}
       -DPYTHON_EXECUTABLE=/Library/Frameworks/Python.framework/Versions/Current/bin/python
       -Dbuiltin_cfitsio=OFF
