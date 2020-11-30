@@ -11,10 +11,10 @@ class Hepmc3 < Formula
   depends_on "root" => :optional
   
   def install
-    ENV['PATH']="/Library/Frameworks/Python.framework/Versions/Current/bin:/usr/local/bin:/usr/bin:/bin:/sbin:/usr/sbin"
+    ENV['PATH']="/usr/local/bin:/usr/bin:/bin:/sbin:/usr/sbin"
     ENV['ROOTSYS']="/usr/local"
-    ENV['PKG_CONFIG_PATH']="/Library/Frameworks/Python.framework/Versions/Current/lib/pkgconfig"
-    ENV['PYTHONPATH']="/Library/Frameworks/Python.framework/Versions/Current/lib/:/usr/local/Cellar/root/6.20.04_2/lib"
+    ENV['PKG_CONFIG_PATH']="/usr/local/Cellar/python@3.9/3.9.0_2/lib/pkgconfig"
+    ENV['PYTHONPATH']="/usr/local/Cellar/python@3.9/3.9.0_2/lib/site-packages:/usr/local/Cellar/root/6.20.04_2/lib"
     mkdir "../build" do
       args = %W[
         -DCMAKE_INSTALL_PREFIX=#{prefix}
