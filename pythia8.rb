@@ -2,10 +2,10 @@ require 'formula'
 
 class Pythia8 < Formula
   
-  desc "Pythia 8.302"
+  desc "Pythia 8.303"
   homepage "http://pythia8.hepforge.org"
-  url "http://home.thep.lu.se/~torbjorn/pythia8/pythia8302.tgz"
-  version "8.302"
+  url "http://home.thep.lu.se/~torbjorn/pythia8/pythia8303.tgz"
+  version "8.303"
   sha256 "7372e4cc6f48a074e6b7bc426b040f218ec4a64b0a55e89da6af56933b5f5085"
 
 
