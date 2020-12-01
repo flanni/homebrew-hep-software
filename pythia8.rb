@@ -19,7 +19,7 @@ class Pythia8 < Formula
   
   def install
     ENV['CXX']="clang++"
-    ENV['PATH']="/Library/Frameworks/Python.framework/Versions/Current/bin:/usr/local/bin:/usr/bin:/bin:/sbin:/usr/sbin"    
+    ENV['PATH']="/usr/local/bin:/usr/bin:/bin:/sbin:/usr/sbin"    
     args = %W[
       --prefix=#{prefix}
       --with-fastjet3=#{Formula['fastjet'].opt_prefix}
