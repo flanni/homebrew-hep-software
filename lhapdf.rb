@@ -8,7 +8,7 @@ class Lhapdf < Formula
   
   def install
     ENV['PYTHONPATH']="/usr/local/lib/root:/usr/local/Cellar/pythia8/8.303/lib"
-    ENV['PATH']="/Library/Frameworks/Python.framework/Versions/Current/bin/:/usr/local/bin:/usr/bin:/bin:/sbin:/usr/sbin"
+    ENV['PATH']="/usr/local/bin:/usr/bin:/bin:/sbin:/usr/sbin"
     args = %W[
       --enable-python
       --prefix=#{prefix}
