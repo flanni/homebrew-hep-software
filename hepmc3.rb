@@ -18,13 +18,16 @@ class Hepmc3 < Formula
     mkdir "../build" do
       args = %W[
         -DCMAKE_INSTALL_PREFIX=#{prefix}
-        -DHEPMC3_PYTHON_VERSIONS=3.X
-        -DHEPMC3_ENABLE_PYTHON=ON
-        -DHEPMC3_BUILD_EXAMPLES=ON
-        -DHEPMC3_BUILD_DOCS=ON
+        -DHEPMC3_ENABLE_ROOTIO:BOOL=ON 
+        -DHEPMC3_ENABLE_TEST:BOOL=ON 
+        -DHEPMC3_INSTALL_INTERFACES:BOOL=ON 
+        -DHEPMC3_ENABLE_PYTHON:BOOL=ON 
+        -DHEPMC3_PYTHON_VERSIONS=3.9 
+        -DHEPMC3_BUILD_STATIC_LIBS:BOOL=OFF 
+        -DHEPMC3_BUILD_DOCS:BOOL=ON 
+        -DHEPMC3_Python_SITEARCH39=/usr/local/lib/python3.9/site-packages 
+        -DPYTHIA8_ROOT_DIR=/usr/local/Cellar/pythia8/8.303
       ]
-      args<<"-DHEPMC3_ENABLE_TEST=ON" if build.with? "test"
-      args<<"-DHEPMC3_ENABLE_ROOTIO=ON" if build.with? "root"
       system "cmake", buildpath, *args
       system "make"
       system "make", "test" if build.with? "test"
