@@ -27,6 +27,7 @@ class Hepmc3 < Formula
         -DHEPMC3_BUILD_DOCS:BOOL=ON 
         -DHEPMC3_Python_SITEARCH39=/usr/local/lib/python3.9/site-packages 
         -DPYTHIA8_ROOT_DIR=/usr/local/Cellar/pythia8/8.303
+        -DUSE_INTERFACE_FROM_PYTHIA8=ON
       ]
       system "cmake", buildpath, *args
       system "make"
