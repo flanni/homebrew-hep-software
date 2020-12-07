@@ -2,7 +2,7 @@ class Hepmc3 < Formula
   desc "Library is to handle  event record for Monte Carlo generators"
   homepage "https://hepmc.web.cern.ch/hepmc/"
   url "https://hepmc.web.cern.ch/hepmc/releases/HepMC3-3.2.2.tar.gz"
-  sha256 "7f2b29b3f18539f4ed9d590a1e5589d6f61eb5c5901263952a442d95136af6e6"
+  sha256 "0e8cb4f78f804e38f7d29875db66f65e4c77896749d723548cc70fb7965e2d41"
 
   option "with-test", "Test during installation"
   option "with-root", "Enable root IO"
