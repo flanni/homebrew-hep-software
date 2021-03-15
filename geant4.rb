@@ -1,16 +1,16 @@
 class Geant4 < Formula
   desc "Simulation toolkit for particle transport through matter"
   homepage "https://geant4.web.cern.ch"
-  url "https://geant4-data.web.cern.ch/geant4-data/releases/source/geant4.10.06.p02.tar.gz"
-  version "10.6.2"
-  sha256 "ecdadbf846807af8baa071f38104fb0dcc24847c8475cd8397302e2aefa8f66f"
+  url "https://geant4-data.web.cern.ch/geant4-data/releases/source/geant4.10.07.p01.tar.gz"
+  version "10.7.1"
+  sha256 "525161753a3d9c2ad19b25f2eabc8bbede91c236120771bd9c3f4aaac8412e1e"
 
-  bottle do
-    sha256 cellar: :any, big_sur:     "170f4a4a3c7c730371e324e7f8e067a855247c1e7ed58f6313be95a55448b7ce"
-    sha256 cellar: :any, catalina:    "ce3f0b6a5d075a00e48d38389348e2cc4c140bc88cccb9d44337b48aeb1cfb9e"
-    sha256 cellar: :any, mojave:      "8bca28cae9c11797ae79e787c3fdfe17cf5b4a1ddb478b7731f36a25ea6f1a7b"
-    sha256 cellar: :any, high_sierra: "09736ea0f71a08b93566a3fb02a16c8bef148e5f79eba71fb8fdd0c5947fa001"
-  end
+#  bottle do
+#    sha256 cellar: :any, big_sur:     "170f4a4a3c7c730371e324e7f8e067a855247c1e7ed58f6313be95a55448b7ce"
+#    sha256 cellar: :any, catalina:    "ce3f0b6a5d075a00e48d38389348e2cc4c140bc88cccb9d44337b48aeb1cfb9e"
+#    sha256 cellar: :any, mojave:      "8bca28cae9c11797ae79e787c3fdfe17cf5b4a1ddb478b7731f36a25ea6f1a7b"
+#    sha256 cellar: :any, high_sierra: "09736ea0f71a08b93566a3fb02a16c8bef148e5f79eba71fb8fdd0c5947fa001"
+#  end
 
   depends_on "cmake" => [:build, :test]
   depends_on "expat"
@@ -25,18 +25,18 @@ class Geant4 < Formula
   end
 
   resource "G4EMLOW" do
-    url "https://cern.ch/geant4-data/datasets/G4EMLOW.7.9.1.tar.gz"
-    sha256 "820c106e501c64c617df6c9e33a0f0a3822ffad059871930f74b8cc37f043ccb"
+    url "https://cern.ch/geant4-data/datasets/G4EMLOW.7.13.tar.gz"
+    sha256 "374896b649be776c6c10fea80abe6cf32f9136df0b6ab7c7236d571d49fb8c69"
   end
 
   resource "PhotonEvaporation" do
-    url "https://cern.ch/geant4-data/datasets/G4PhotonEvaporation.5.5.tar.gz"
-    sha256 "5995dda126c18bd7f68861efde87b4af438c329ecbe849572031ceed8f5e76d7"
+    url "https://cern.ch/geant4-data/datasets/G4PhotonEvaporation.5.7.tar.gz"
+    sha256 "761e42e56ffdde3d9839f9f9d8102607c6b4c0329151ee518206f4ee9e77e7e5"
   end
 
   resource "RadioactiveDecay" do
-    url "https://cern.ch/geant4-data/datasets/G4RadioactiveDecay.5.4.tar.gz"
-    sha256 "240779da7d13f5bf0db250f472298c3804513e8aca6cae301db97f5ccdcc4a61"
+    url "https://cern.ch/geant4-data/datasets/G4RadioactiveDecay.5.6.tar.gz"
+    sha256 "3886077c9c8e5a98783e6718e1c32567899eeb2dbb33e402d4476bc2fe4f0df1"
   end
 
   resource "G4SAIDDATA" do
@@ -45,8 +45,8 @@ class Geant4 < Formula
   end
 
   resource "G4PARTICLEXS" do
-    url "https://cern.ch/geant4-data/datasets/G4PARTICLEXS.2.1.tar.gz"
-    sha256 "094d103372bbf8780d63a11632397e72d1191dc5027f9adabaf6a43025520b41"
+    url "https://cern.ch/geant4-data/datasets/G4PARTICLEXS.3.1.tar.gz"
+    sha256 "404da84ead165e5cccc0bb795222f6270c9bf491ef4a0fd65195128b27f0e9cd"
   end
 
   resource "G4ABLA" do
@@ -65,13 +65,13 @@ class Geant4 < Formula
   end
   
  resource "G4ENSDFSTATE" do
-    url "https://cern.ch/geant4-data/datasets/G4ENSDFSTATE.2.2.tar.gz"
-    sha256 "dd7e27ef62070734a4a709601f5b3bada6641b111eb7069344e4f99a01d6e0a6"
+    url "https://cern.ch/geant4-data/datasets/G4ENSDFSTATE.2.3.tar.gz"
+    sha256 "9444c5e0820791abd3ccaace105b0e47790fadce286e11149834e79c4a8e9203"
   end
 
   resource "RealSurface" do
-    url "https://cern.ch/geant4-data/datasets/G4RealSurface.2.1.1.tar.gz"
-    sha256 "90481ff97a7c3fa792b7a2a21c9ed80a40e6be386e581a39950c844b2dd06f50"
+    url "https://cern.ch/geant4-data/datasets/G4RealSurface.2.2.tar.gz"
+    sha256 "9954dee0012f5331267f783690e912e72db5bf52ea9babecd12ea22282176820"
   end
 
   def install
