@@ -78,6 +78,7 @@ class Geant4 < Formula
     mkdir "geant-build" do
       args = std_cmake_args + %w[
         ../
+        -DCMAKE_PREFIX_PATH=/usr/local/Cellar/qt@5//5.15.2/lib/cmake/
         -DGEANT4_USE_GDML=ON
         -DGEANT4_BUILD_MULTITHREADED=ON
         -DGEANT4_USE_QT=ON
