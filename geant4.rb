@@ -46,7 +46,7 @@ class Geant4 < Formula
 
   resource "G4PARTICLEXS" do
     url "https://cern.ch/geant4-data/datasets/G4PARTICLEXS.3.1.1.tar.gz"
-    sha256 "404da84ead165e5cccc0bb795222f6270c9bf491ef4a0fd65195128b27f0e9cd"
+    sha256 "66c17edd6cb6967375d0497add84c2201907a25e33db782ebc26051d38f2afda"
   end
 
   resource "G4ABLA" do
