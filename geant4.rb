@@ -1,9 +1,9 @@
 class Geant4 < Formula
   desc "Simulation toolkit for particle transport through matter"
   homepage "https://geant4.web.cern.ch"
-  url "https://geant4-data.web.cern.ch/geant4-data/releases/source/geant4.10.07.p01.tar.gz"
-  version "10.7.1"
-  sha256 "525161753a3d9c2ad19b25f2eabc8bbede91c236120771bd9c3f4aaac8412e1e"
+  url "https://geant4-data.web.cern.ch/geant4-data/releases/source/geant4.10.07.p02.tar.gz"
+  version "10.7.2"
+  sha256 "5eaa519b66d62703f9a9667f35b8dd95e50c1127d56a534215f8834e3c38129f"
 
 #  bottle do
 #    sha256 cellar: :any, big_sur:     "170f4a4a3c7c730371e324e7f8e067a855247c1e7ed58f6313be95a55448b7ce"
@@ -45,7 +45,7 @@ class Geant4 < Formula
   end
 
   resource "G4PARTICLEXS" do
-    url "https://cern.ch/geant4-data/datasets/G4PARTICLEXS.3.1.tar.gz"
+    url "https://cern.ch/geant4-data/datasets/G4PARTICLEXS.3.1.1.tar.gz"
     sha256 "404da84ead165e5cccc0bb795222f6270c9bf491ef4a0fd65195128b27f0e9cd"
   end
 
@@ -72,6 +72,11 @@ class Geant4 < Formula
   resource "RealSurface" do
     url "https://cern.ch/geant4-data/datasets/G4RealSurface.2.2.tar.gz"
     sha256 "9954dee0012f5331267f783690e912e72db5bf52ea9babecd12ea22282176820"
+  end
+
+  resource "G4TENDL" do
+    url "https://cern.ch/geant4-data/datasets/G4TENDL.1.3.2.tar.gz"
+    sha256 "4fb57b9c1ae475726da93992f373dc33e8d22f30d555afc1a42575ac25053b44"
   end
 
   def install
