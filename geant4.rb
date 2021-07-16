@@ -76,7 +76,7 @@ class Geant4 < Formula
 
   resource "G4TENDL" do
     url "https://cern.ch/geant4-data/datasets/G4TENDL.1.3.2.tar.gz"
-    sha256 "4fb57b9c1ae475726da93992f373dc33e8d22f30d555afc1a42575ac25053b44"
+    sha256 "3b2987c6e3bee74197e3bd39e25e1cc756bb866c26d21a70f647959fc7afb849"
   end
 
   def install
