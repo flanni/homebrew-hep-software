@@ -3,7 +3,7 @@ class Geant4 < Formula
   homepage "https://geant4.web.cern.ch"
   url "https://geant4-data.web.cern.ch/geant4-data/releases/source/geant4.10.07.p02.tar.gz"
   version "10.7.2"
-  sha256 "5eaa519b66d62703f9a9667f35b8dd95e50c1127d56a534215f8834e3c38129f"
+  sha256 "ee4ae9f103546e92aa3762b253fd1d95d1f2792299951d59c94e7b673eb86b32"
 
 #  bottle do
 #    sha256 cellar: :any, big_sur:     "170f4a4a3c7c730371e324e7f8e067a855247c1e7ed58f6313be95a55448b7ce"
